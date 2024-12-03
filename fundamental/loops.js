@@ -390,6 +390,7 @@
 // console.log(arr1);
 
 
+
 // Write a for...of loop to iterate through an array of objects and print a specific property of each object.
 // Example Input: const users = [{ name: "Alice" }, { name: "Bob" }, { name: "Charlie" }];
 // const users = [{ name: "Alice" }, { name: "Bob" }, { name: "Charlie" }];

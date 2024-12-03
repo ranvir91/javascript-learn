@@ -313,6 +313,7 @@
 // }
 // Note : const element in arr (this will print index)
 
+
 // Write a for...of loop to concatenate all elements in an array into a single string.
 // Example Input: ["I", "love", "JavaScript"] → Output: "I love JavaScript"
 // let array = ["I", "love", "JavaScript"];

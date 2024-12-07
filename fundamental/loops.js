@@ -524,7 +524,7 @@
 // }
 
 // using recursive function
-const nestedObject = { name: "Alice", details: { age: 25, city: "New York" } };
+// const nestedObject = { name: "Alice", details: { age: 25, city: "New York" } };
 
 // function printObject(obj) {
 //     for (const key in obj) {

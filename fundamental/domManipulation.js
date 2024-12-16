@@ -43,14 +43,18 @@
 
 
 // 7. getElementsByTagName vs. querySelectorAll
-// getElementsByTagName: Returns an HTMLCollection of elements with a specific tag name. It's a live collection, meaning changes to the DOM are reflected in the collection.
+// getElementsByTagName: Returns an HTMLCollection of elements with a specific tag name. It's a live collection, 
+// meaning changes to the DOM are reflected in the collection.
 // querySelectorAll: Returns a static NodeList of elements matching a specified CSS selector. It's not a live collection.
+// we can iterate, and manipulate html by both of these
+
 
 // 8. Selecting Elements with Multiple Classes
 // const elementWithMultipleClasses = document.querySelector('.class1.class2');
 
 // 9. Selecting the First Child Element
 // const firstChild = document.querySelector('parent-element > :first-child');
+
 
 // 10. Advantages of querySelector/querySelectorAll:
 // Flexibility: Can select elements based on various CSS selectors, providing more precise targeting.

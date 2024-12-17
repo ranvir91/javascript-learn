@@ -1,9 +1,9 @@
 // 1. try...catch and finally in JavaScript
-// The try...catch statement allows you to handle errors gracefully in JavaScript. It is used to "try" a block of code, "catch" errors if they occur, and optionally execute a "finally" block that will always run, regardless of whether an error occurred.
+// The try...catch statement allows you to handle errors gracefully in JavaScript. 
+// It is used to "try" a block of code, "catch" errors if they occur, and optionally execute a 
+// "finally" block that will always run, regardless of whether an error occurred.
 
 // Syntax:
-// javascript
-// Copy code
 // try {
 //   // Code that may throw an error
 // } catch (error) {
@@ -11,9 +11,8 @@
 // } finally {
 //   // Code that always executes (optional)
 // }
+
 // Example 1: Using try...catch
-// javascript
-// Copy code
 // try {
 //   const result = 10 / 0; // No error here, but let's intentionally throw one
 //   if (!isFinite(result)) {
@@ -23,9 +22,8 @@
 // } catch (error) {
 //   console.error("Error caught: ", error.message); // Outputs: "Cannot divide by zero!"
 // }
+
 // Example 2: Using try...catch with finally
-// javascript
-// Copy code
 // try {
 //   let data = JSON.parse('{ "name": "John" }'); // Valid JSON string
 //   console.log("Parsed Data:", data); // Runs successfully
@@ -37,9 +35,8 @@
 // // Output:
 // // Parsed Data: { name: 'John' }
 // // This block always runs, regardless of error.
+
 // Example 3: Catching Syntax Errors in JSON
-// javascript
-// Copy code
 // try {
 //   let data = JSON.parse('Invalid JSON'); // This will throw a SyntaxError
 //   console.log(data);
@@ -48,19 +45,21 @@
 // } finally {
 //   console.log("Cleaning up resources...");
 // }
+
 // Key Points:
 // The try block contains code that might throw an error.
 // The catch block catches the error and lets you handle it.
 // The finally block always runs, regardless of whether there was an error or not (e.g., to clean up resources or close files).
+
 // 2. Custom Error Objects in JavaScript
-// You can create custom error objects to represent domain-specific or application-specific errors. Custom errors help make your error-handling code clearer and more meaningful.
+// You can create custom error objects to represent domain-specific or application-specific errors. 
+// Custom errors help make your error-handling code clearer and more meaningful.
 
 // How to Create a Custom Error:
 // Create a new class that extends the built-in Error class.
 // Add custom properties or methods if necessary.
+
 // Example 1: Simple Custom Error
-// javascript
-// Copy code
 // class CustomError extends Error {
 //   constructor(message) {
 //     super(message); // Call the parent class constructor
@@ -73,9 +72,8 @@
 // } catch (error) {
 //   console.error(`${error.name}: ${error.message}`); // Outputs: CustomError: This is a custom error!
 // }
+
 // Example 2: Custom Error with Additional Information
-// javascript
-// Copy code
 // class ValidationError extends Error {
 //   constructor(field, message) {
 //     super(message); // Call the parent class constructor
@@ -97,11 +95,33 @@
 //     console.error(error);
 //   }
 // }
+
+
+// class Errorr extends Error {
+//     constructor(message, field){
+//         super(message)
+//         this.name = "customerror"
+//         this.field = field;
+//     }
+// }
+
+// try {
+//     let email = ""
+//     if(email==="") {
+//         throw new Errorr("Field is empty", "Email ")
+//     }
+// } catch (error) {
+//     if(error instanceof Errorr) {
+//         console.log(`cought custom error : ${error.field}, ${error.message}`);        
+//     } else {
+//         console.log("cought error :", error);        
+//     }
+// }
+
+
 // Example 3: Re-throwing Errors
 // You can use throw inside a catch block to propagate errors after handling them.
 
-// javascript
-// Copy code
 // class DatabaseError extends Error {
 //   constructor(message, query) {
 //     super(message);
@@ -121,9 +141,8 @@
 //   console.error("Error caught again:", error);
 //   // Output: Error caught again: DatabaseError: Failed to execute query
 // }
+
 // Example 4: Logging Custom Errors with finally
-// javascript
-// Copy code
 // class FileNotFoundError extends Error {
 //   constructor(message, fileName) {
 //     super(message);
@@ -137,11 +156,12 @@
 // } catch (error) {
 //   console.error(`${error.name}: ${error.message} (File: ${error.fileName})`);
 // } finally {
-//   console.log("Finished error handling."); 
+//   console.log("Finished error handling.");
 // }
 // // Output:
 // // FileNotFoundError: File not found (File: data.txt)
 // // Finished error handling.
+
 // Key Points for Custom Errors:
 // Extend the Error class for your custom errors.
 // Add any additional properties (e.g., field, query, etc.) that give more context about the error.

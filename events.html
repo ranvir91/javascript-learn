@@ -1,0 +1,39 @@
+<div id="parent" style="border: 2px solid red; padding: 20px;">
+    Parent
+    <button id="child">Click Me</button>
+</div>
+
+<script>
+document.getElementById("parent").addEventListener("click", () => {
+    console.log("Parent clicked (Bubbling)");
+});
+
+document.getElementById("child").addEventListener("click", () => {
+    console.log("Child clicked");
+});
+</script>
+
+
+
+
+
+<button id="myButton">Click to Trigger Custom Event</button>
+
+<script>
+// Create a custom event
+const myEvent = new CustomEvent("myCustomEvent", {
+    detail: { message: "This is a custom event!", time: new Date() },
+});
+
+// Add a listener for the custom event
+document.addEventListener("myCustomEvent", (event) => {
+    console.log("Custom Event Triggered:");
+    console.log("Message:", event.detail.message);
+    console.log("Time:", event.detail.time);
+});
+
+// Dispatch the custom event when the button is clicked
+document.getElementById("myButton").addEventListener("click", () => {
+    document.dispatchEvent(myEvent);
+});
+</script>
